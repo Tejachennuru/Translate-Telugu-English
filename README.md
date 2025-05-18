@@ -56,6 +56,18 @@ output.jsonl
 
 ## 📥 Input Format
 
+Get the subtitles from a youtube video
+
+1. Paste the link of video you want to download subtitles.
+2. Click Download button to begin extracting subtitles.
+3. Select the subtitles format and language you want to download, then click Download button.
+
+ Tricks
+Add subtitle.to/ before the URL and press Enter
+Or add subtitle.to/ between the URL and press Enter
+
+Download the srt file for input.
+
 The input should be a `.srt` file like the example below:
 
 ```
