@@ -1,43 +1,44 @@
-Sure — here is the **full content of the `README.md` file** ready for copy-paste or saving directly:
+# 🗣 Telugu Subtitle Translator
+
+A simple tool to convert `.srt` subtitle files written in **Telugu** into structured English-Telugu sentence pairs for NLP or localization tasks.
 
 ---
 
-```markdown
-# 🗣️ Telugu Subtitle Translator (Telugu ➡️ English)
-
-A Python script that reads `.srt` subtitle files containing **Telugu** text, translates each line to **English**, and outputs the result in a structured JSON format.
-
----
-
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```
-
-translate/
-├── input.srt           # Your Telugu subtitle input file
-├── en\_te.py            # Main script to extract, translate, and output
-├── output.jsonl        # Output file with translated text (generated)
-└── README.md           # Documentation
-
-````
+telugu-translator/
+├── input.srt         # Input subtitle file (Telugu)
+├── en_te.py          # Python translation script
+├── output.jsonl      # Output file with English-Telugu pairs
+└── README.md         # Documentation
+```
 
 ---
 
-## 🔧 Installation
+## ✅ Features
 
-Install the required Python package using pip:
+- Parses `.srt` subtitle files
+- Extracts and processes only Telugu text lines
+- Translates each line to English
+- Outputs results in JSON Lines format
+- Lightweight, no complex setup
+
+---
+
+## 🛠 Installation
+
+Make sure you have Python 3.6+ installed, then install dependencies:
 
 ```bash
 pip install googletrans==4.0.0-rc1
-````
-
-> **Note:** An active internet connection is required for the translator to work using Google's free API.
+```
 
 ---
 
-## 🚀 How to Use
+## 🚀 Usage
 
-1. Save your Telugu subtitle file as `input.srt` in the same folder as `en_te.py`.
+1. Place your input file in the same directory and name it `input.srt`.
 
 2. Run the script:
 
@@ -45,15 +46,19 @@ pip install googletrans==4.0.0-rc1
 python en_te.py
 ```
 
-3. The translated output will be saved to `output.jsonl`.
+3. After successful execution, the translated results will be saved to:
+
+```
+output.jsonl
+```
 
 ---
 
-## 📥 Input Format (`input.srt`)
+## 📥 Input Format
 
-Your input should be in standard `.srt` subtitle format, like this:
+The input should be a `.srt` file like the example below:
 
-```srt
+```
 1
 00:00:00,000 --> 00:00:03,520
 ఏఐ ఏఐ ఏఐఏఐ ఈ పదం విని విని విని మీకు
@@ -61,57 +66,65 @@ Your input should be in standard `.srt` subtitle format, like this:
 2
 00:00:03,520 --> 00:00:05,359
 చిరాగ వచ్చేస్తుందని నాకు తెలుసు. కానీ
+
+3
+00:00:05,359 --> 00:00:07,919
+99% ఆఫ్ ద బిగినర్స్ కి ఏఐ రిలేటెడ్
+
+4
+00:00:07,919 --> 00:00:09,519
+టర్మ్స్ అయితే తెలియవు. రాగ్ అంటే ఏంటి?
+
+5
+00:00:09,519 --> 00:00:11,759
+ఎల్ఎల్ఎం అంటే ఏంటి? ఏఏజెంట్ కి ఏ టూల్ కి
+
+6
+00:00:11,759 --> 00:00:13,679
+డిఫరెన్స్ ఏంటి? లాంగ్ చైన్ అంటే ఏంటి?
 ```
 
-The script will extract all Telugu lines from these blocks.
+> The script will ignore timestamp and numbering lines. Only Telugu dialogue is processed.
 
 ---
 
-## 📤 Output Format (`output.jsonl`)
+## 📤 Output Format
 
-Each translated sentence will be output in JSON Lines format:
+The output will be saved in `output.jsonl` (JSON Lines format), where each line represents one translation:
 
 ```json
 { "en": "AI AI AI AI you keep hearing this word", "te": "ఏఐ ఏఐ ఏఐఏఐ ఈ పదం విని విని విని మీకు" }
 { "en": "I know Chirag comes to your mind. But", "te": "చిరాగ వచ్చేస్తుందని నాకు తెలుసు. కానీ" }
+{ "en": "99% of beginners don’t know AI-related terms", "te": "99% ఆఫ్ ద బిగినర్స్ కి ఏఐ రిలేటెడ్" }
+{ "en": "They don't know terms. What is RAG?", "te": "టర్మ్స్ అయితే తెలియవు. రాగ్ అంటే ఏంటి?" }
 ```
 
-* `"en"` → English translation (auto-generated)
-* `"te"` → Original Telugu line
+---
 
-You can easily import this into tools like databases, Excel, or other language learning tools.
+## 🧠 Behind the Scenes
+
+- Built using `googletrans` (Google Translate unofficial API)
+- Auto-detects language and provides approximate translations
+- Lightweight and works offline after initial translation
 
 ---
 
-## ⚠️ Limitations
+## 📌 Notes
 
-* This uses Google Translate unofficial API — may be rate-limited for large files.
-* Translations are approximate; manual review is recommended for critical use.
-
----
-
-## 💡 Future Upgrades
-
-* Offline translation (using local AI models)
-* Web interface for drag-drop files
-* Batch processing and subtitle re-timing
+- Requires internet access for translation.
+- `googletrans` may hit rate limits if overused — avoid large file batches.
+- Ideal for creating English-Telugu parallel corpora.
 
 ---
 
-## 👨‍💻 Author
+## 🤝 Contributing
 
-Crafted with 🧠 and ❤️ by an AI innovation assistant.
-Ready to scale your language tools and redefine accessibility.
+Pull requests welcome. For major changes, open an issue first to discuss what you would like to change.
 
 ---
 
 ## 📄 License
 
-This project is open-source and free to use.
-
-```
+MIT License © 2025
 
 ---
-
-Let me know if you'd like a downloadable version (`.md`), or want to turn this into a GitHub-friendly project template.
-```
